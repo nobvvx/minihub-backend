@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: minihub-backend
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: META_APP_ID
+        sync: false
+      - key: META_APP_SECRET
+        sync: false
+      - key: META_VERIFY_TOKEN
+        value: minihub_webhook_2024
+      - key: PAGE_TOKEN_MINIAGRI
+        sync: false
+      - key: PAGE_TOKEN_MINITP
+        sync: false
+      - key: PAGE_TOKEN_MINITRUCK
+        sync: false
+      - key: PAGE_ID_MINIAGRI
+        sync: false
+      - key: PAGE_ID_MINITP
+        sync: false
+      - key: PAGE_ID_MINITRUCK
+        sync: false
+      - key: WA_PHONE_NUMBER_ID
+        sync: false
+      - key: WA_ACCESS_TOKEN
+        sync: false
+      - key: WA_VERIFY_TOKEN
+        value: minihub_wa_2024
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 3000
